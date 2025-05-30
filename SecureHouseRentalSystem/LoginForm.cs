@@ -84,6 +84,11 @@ namespace SecureHouseRentalSystem
             }
         }
 
+        private void chkShowPassword_CheckedChanged(object sender, EventArgs e)
+        {
+            txtPassword.PasswordChar = chkShowPassword.Checked ? '\0' : '*';
+        }
+
         private void ShowAttemptWarning(string message)
         {
             if (loginAttempts >= MaxAttempts)
